@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+env/
+
+# Model weights
+*.pth
+*.pt
+
+# Logs and checkpoints
+logs/
+runs/
+checkpoints/
+
+# Dataset
+dataset/
+
+# Documents
+*.pdf
+*.docx
+*.zip
+*.json

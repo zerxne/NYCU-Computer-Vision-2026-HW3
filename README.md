@@ -3,14 +3,12 @@
 - **Student ID**: 314554032
 - **Name**: 江怜儀
 
----
 
 ## Introduction
 The task involves segmenting four types of cells (class1–class4) from colored medical histology images, evaluated using AP@50 on a held-out test set via CodaBench.
 
 The core approach is based on Mask R-CNN, enhanced with a stronger Swin Transformer backbone, two-stage training (frozen → full fine-tuning), Stochastic Weight Averaging (SWA), and Test-Time Augmentation (TTA) with Soft-NMS at inference. These components collectively aim to push the model beyond the strong baseline of AP@50 ≈ 0.35.
 
----
 
 ## Environment Setup
 Step 1 — Install PyTorch with CUDA (adjust `cu118` to match your driver, e.g. `cu121`):
@@ -29,7 +27,7 @@ pip install -r requirements.txt
 > ```bash
 > pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 > ```
----
+
 ## Dataset Structure
  
 Place the dataset under a single root directory. The expected layout is:
@@ -54,7 +52,6 @@ dataset/
 
 Each `classN.tif` is a binary mask for foreground instances of class N. Connected components are used to extract individual instances.
 
----
 ## Usage
 
 ### Training
@@ -90,3 +87,4 @@ python test.py \
 
 
 ## Performance Snapshot
+![performance](https://github.com/zerxne/NYCU-Computer-Vision-2026-HW3/blob/ed2e7ddd336c2285c18ae20976acb3b70ef16062/performance.png)
